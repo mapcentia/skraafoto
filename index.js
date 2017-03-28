@@ -28,15 +28,7 @@ var backboneEvents;
  */
 var transformPoint;
 
-/**
- *
- */
-var React = require('react');
 
-/**
- *
- */
-var ReactDOM = require('react-dom');
 
 /**
  *
@@ -70,15 +62,49 @@ module.exports = module.exports = {
      */
     init: function () {
 
+        /**
+         *
+         */
+        var React = require('react');
+
+        /**
+         *
+         */
+        var ReactDOM = require('react-dom');
+
+        class Skraafoto extends React.Component {
+            constructor(props) {
+                super(props);
+            }
+
+            render() {
+                return (
+                    <div role="tabpanel">
+                        <div className="panel panel-default">
+                            <div className="panel-body">
+                                <div className="togglebutton">
+                                    <label><input id="skraafoto-btn" type="checkbox"/>Aktiver skråfoto</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                );
+            }
+        }
+
         utils.createMainTab(exId, "Skråfoto", "......", require('./../../height')().max);
 
         // Append to DOM
         //==============
+        try {
 
-        ReactDOM.render(
-            <Skraafoto />,
-            document.getElementById(exId)
-        );
+            ReactDOM.render(
+                <Skraafoto />,
+                document.getElementById(exId)
+            );
+        } catch (e) {
+
+        }
 
     },
 
@@ -118,22 +144,4 @@ module.exports = module.exports = {
 
 };
 
-class Skraafoto extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
-    render() {
-        return (
-            <div role="tabpanel">
-                <div className="panel panel-default">
-                    <div className="panel-body">
-                        <div className="togglebutton">
-                            <label><input id="skraafoto-btn" type="checkbox"/>Aktiver skråfoto</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        );
-    }
-}
