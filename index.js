@@ -132,7 +132,7 @@ module.exports = module.exports = {
         var coords = event.getCoordinate(), p,
             url = "http://kbhkort.kk.dk/modules/oblique/html";
         p = utils.transform("EPSG:3857", "EPSG:25832", coords);
-        utils.popupCenter(url + "?x=" + p.x + "&y=" + p.y,  (utils.screen().width - 100), (utils.screen().height - 100));
+        utils.popupCenter(url + "?x=" + p.x + "&y=" + p.y,  (utils.screen().width - 100), (utils.screen().height - 100), exId);
     },
 
     /**
