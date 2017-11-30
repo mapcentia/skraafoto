@@ -92,7 +92,7 @@ module.exports = module.exports = {
             }
         }
 
-        utils.createMainTab(exId, "Skråfoto", "......", require('./../../height')().max);
+        utils.createMainTab(exId, "Skråfoto", "......", require('./../../../browser/modules/height')().max);
 
         // Append to DOM
         //==============
