@@ -130,9 +130,9 @@ module.exports = module.exports = {
 
     click: function (event) {
         var coords = event.getCoordinate(), p,
-            url = "http://kbhkort.kk.dk/modules/oblique/html";
+            url = "https://skraafoto.kortforsyningen.dk/oblivisionjsoff/index.aspx?project=Denmark";
         p = utils.transform("EPSG:3857", "EPSG:25832", coords);
-        utils.popupCenter(url + "?x=" + p.x + "&y=" + p.y,  (utils.screen().width - 100), (utils.screen().height - 100), exId);
+        utils.popupCenter(url + "&lon=" + p.x + "&lat=" + p.y,  (utils.screen().width - 100), (utils.screen().height - 100), exId);
     },
 
     /**
